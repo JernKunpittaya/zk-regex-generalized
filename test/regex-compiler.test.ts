@@ -14,7 +14,7 @@ describe("regex compiler tests", function () {
       //   [`1=(a|b) (2=(b|c)+ )+d`, 0],
       // [`>&lt;${generator.word_char}+\\/${generator.word_char}+`, 1],
       [
-        `https:\\/\\/github.com\\/${generator.word_char}+\\/${generator.word_char}+`,
+        `data-url="https:\\/\\/github.com\\/${generator.word_char}+\\/${generator.word_char}+`,
         1,
       ],
       [
@@ -28,7 +28,9 @@ describe("regex compiler tests", function () {
             // expect(signals.main.entire_count).to.equal(1n);
             // expect(signals.main.group_match_count).to.equal(1n);
             // expect(signals.main.start_idx).to.equal(2n);
-            const expected_reveal = encodeString("JernK/rpeo1");
+            const expected_reveal = encodeString(
+              "JernKunpittaya/test_github_email"
+            );
             assert_reveal(signals, expected_reveal);
           },
         ],
