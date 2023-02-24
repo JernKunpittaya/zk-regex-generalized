@@ -248,7 +248,7 @@ async function generateCircuit(regex, circuitLibPath, circuitName) {
   reveal_code.push("signal output reveal[num_bytes];");
   reveal_code.push("for (var i = 0; i < num_bytes; i++) {");
   reveal_code.push(
-    `\treveal[i] <== in[i] * (states[i+1][match_group_indexes[group_idx-1]]+states[i+1][match_group_indexes[group_idx]]);`
+    `\treveal[i] <== in[i] * states[i+1][match_group_indexes[group_idx]];`
   );
   reveal_code.push("}");
   reveal_code.push("");
