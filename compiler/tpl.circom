@@ -118,12 +118,12 @@ template TEMPLATE_NAME_PLACEHOLDER (msg_bytes, reveal_bytes, group_idx) {
         matched_idx_eq0_5[i].in[1] <== match_idx + 1;
     }
 
-    component match_start_idx[msg_bytes];
-    for (var i = 0; i < msg_bytes; i++) {
-        match_start_idx[i] = IsEqual();
-        match_start_idx[i].in[0] <== i;
-        match_start_idx[i].in[1] <== start_index;
-    }
+    // component match_start_idx[msg_bytes];
+    // for (var i = 0; i < msg_bytes; i++) {
+    //     match_start_idx[i] = IsEqual();
+    //     match_start_idx[i].in[0] <== i;
+    //     match_start_idx[i].in[1] <== start_index;
+    // }
 
     //use 0th group too
     component match_start_idx0[msg_bytes];
@@ -132,12 +132,12 @@ template TEMPLATE_NAME_PLACEHOLDER (msg_bytes, reveal_bytes, group_idx) {
         match_start_idx0[i].in[0] <== i;
         match_start_idx0[i].in[1] <== start_index0;
     }
-    component match_start_idx0_5[msg_bytes];
-    for (var i = 0; i < msg_bytes; i++) {
-        match_start_idx0_5[i] = IsEqual();
-        match_start_idx0_5[i].in[0] <== i;
-        match_start_idx0_5[i].in[1] <== start_index0_5;
-    }
+    // component match_start_idx0_5[msg_bytes];
+    // for (var i = 0; i < msg_bytes; i++) {
+    //     match_start_idx0_5[i] = IsEqual();
+    //     match_start_idx0_5[i].in[0] <== i;
+    //     match_start_idx0_5[i].in[1] <== start_index0_5;
+    // }
 
     signal reveal_match[msg_bytes];
     for (var i = 0; i < msg_bytes; i++) {

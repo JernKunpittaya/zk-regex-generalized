@@ -14,8 +14,8 @@ describe("regex compiler tests", function () {
       //   [`1=(a|b) (2=(b|c)+ )+d`, 0],
       // [`>&lt;${generator.word_char}+\\/${generator.word_char}+`, 1],
       [
-        `data-url="https:\\/\\/github.com\\/${generator.word_char}+\\/${generator.word_char}+`,
-        1,
+        `>Merged <${generator.word_github}+data-url="https:\\/\\/github.com\\/${generator.word_char}+\\/${generator.word_char}+`,
+        2,
       ],
       [
         [
@@ -23,6 +23,9 @@ describe("regex compiler tests", function () {
           //   convertMsg(`1=a 2=b 2=bc 2=c d`),
           // convertMsg(`<span>&lt;JernK/repo1`),
           convertMsg(padded_email_body),
+          // convertMsg(
+          //   `>Merged <a aria-label="Pull request #2"  data-url="https://github.com/Jern/repo1`
+          // ),
           0,
           (signals: any) => {
             // expect(signals.main.entire_count).to.equal(1n);
